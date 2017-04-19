@@ -1,0 +1,29 @@
+<div class="signing">
+    <div class="sign-header">
+        <span> Log in </span>
+    </div>
+    <div class="sign-content">
+        <form ng-submit="submitLogin(form)" ng-init="form = {}">
+            <div class="sign-fields">
+                <div class="form-group">
+                    <label for = "email">Email</label>
+                    <input ng-model="form.email" id = "email" type="text" placeholder="joe.doe@an.com">
+                </div>
+                <div class="form-group">
+                    <label for = "password">Password</label>
+                    <input ng-model="form.password" id = "password" type="password">
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="todo-add todo-butts">
+                    <i class="fa fa-sign-in view"></i>
+                    <span> Log in! </span>
+                </button>
+                <button ui-sref="signup" class="todo-add todo-butts">
+                    <i class="fa fa-level-up view"></i>
+                    <span> Dont have an account? </span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

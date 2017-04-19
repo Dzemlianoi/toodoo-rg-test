@@ -1,0 +1,29 @@
+<header class="header">
+    <form class="todo-form">
+        <input class="new-todo" placeholder="What needs to be done?" ng-keypress="addTaskByEnter(task, $event)" ng-model="task_title">
+        <i ng-click="addTask()" class="fa fa-plus-circle"></i>
+    </form>
+</header>
+<section class="main">
+    <ul class="todo-list">
+        <li ng-repeat="task in tasks | orderBy: ['completed', 'priority']" ng-class="{ completed: task.completed }">
+            <div class="view" id="task{{task.id}}">
+                <input class="toggle" type="checkbox" ng-click="updateCompleted(task)" ng-model="task.completed">
+                <input class = "title-task i-b" readonly ng-model="task.title" ng-keypress="renameTaskByEnter(task, $event)">
+                <div class = "i-b">
+                    <div class="ordering-icons">
+                        <i ng-click="orderUp(task)" ng-hide="$first" class="comments fa fa-chevron-up"></i>
+                        <i ng-click="orderDown(task)" ng-hide="$last" class="comments fa fa-chevron-down"></i>
+                    </div>
+                    <i ng-click="enableTitleEditing($event, task)" class="comments fa fa-pencil"></i>
+                    <i ng-click="renameTask(task)" class="comments fa fa-check"></i>
+                    <i ng-click="openTab(task)" class="comments fa fa-comment-o"></i>
+                    <i ng-click="removeTask(task)" class="comments fa fa-close"></i>
+                </div>
+            </div>
+        </li>
+    </ul>
+</section>
+<footer class="footer" >
+    <span class="todo-count">Tasks count {{ tasks.length }}</span>
+</footer>

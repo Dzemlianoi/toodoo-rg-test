@@ -1,0 +1,31 @@
+<div class="all-comments-area">
+    <div class="comments-wrapper" ng-repeat="comment in comments">
+        <div class="comment-text" >
+            <input type="text" value="{{ comment.comment_text }}" readonly>
+            <i class="fa fa-close" ng-click="removeComment(comment)"></i>
+        </div>
+        <div class="comment-attachment" ng-show="comment.attachment_url">
+            <a ng-href="{{ comment.attachment_url }}" download="true">
+                <i class="fa fa-paperclip"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<textarea placeholder="Your comment text put here" class="comment-area" ng-model="comment_text"></textarea>
+<div class="i-b comment-buttons">
+    <div ng-hide="file" class="file-button" ngf-select ng-model="file" name="file" ngf-max-size="5MB">
+        <i class="fa fa-save"></i>
+        <span class="attach">Add file</span>
+    </div>
+
+    <div ng-show="file" class="file-button" ng-click="file = ''">
+        <i class="fa fa-close"></i>
+        <span class="attach">Remove file</span>
+    </div>
+
+    <button ng-click="addComment()" class="comment-add-button" type = "button">
+        <i class="fa fa-plus"></i>
+        <span>Add new comment!</span>
+    </button>
+</div>
+

@@ -1,0 +1,13 @@
+<section class="task-list" id="project{{project.id}}">
+    <div class ="task-list-name">
+        <input type="text" class="i-b" readonly="true" ng-keypress="renameProjectByEnter(project, $event)" ng-model="project.title">
+        <div class = "i-b project-panel" >
+            <i ng-click="renameProject(project)" class="fa fa-check"></i>
+            <i ng-click="editProject(project)" class="fa fa-pencil"></i>
+            <i ng-click="delete(project)" class="fa fa-close"></i>
+        </div>
+    </div>
+    <div class = "todoapp">
+        <task-wrapper tasks="tasks" project="project"></task-wrapper>
+    </div>
+</section>

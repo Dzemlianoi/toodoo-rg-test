@@ -1,0 +1,6 @@
+bower_components/
+.idea
+logs/*
+!.gitkeep
+node_modules/
+tmp

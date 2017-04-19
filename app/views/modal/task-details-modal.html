@@ -1,0 +1,38 @@
+<flash-message></flash-message>
+
+<h2 class="info-title">Task: {{ editedTask.title }}</h2>
+<div class="info">
+    <div class="info-fieldset info-project">
+        <div class="info-name"> Project </div>
+        <div class="info-value"> {{ project.title }} </div>
+    </div>
+
+    <div class="info-fieldset info-order">
+        <div class="info-name"> Order </div>
+        <div class="info-value"> {{ editedTask.priority }}/{{ tasks.length }} </div>
+    </div>
+
+    <div class="info-fieldset info-complete">
+        <div class="info-name"> Completed? </div>
+        <div class="info-value"> {{ isCompleted(editedTask) }} </div>
+    </div>
+
+    <div class="info-fieldset info-deadline" ng-show="editedTask.deadline">
+        <div class="info-name"> Current deadline </div>
+        <div class="info-value"> {{ editedTask.deadline | date:'dd-MM hh:mm' }} </div>
+    </div>
+
+
+    <div class="info-fieldset info-new-deadline">
+        <div class="info-name"> New deadline </div>
+        <div class="info-value">
+            <datetimepicker data-ng-model="data.date" data-datetimepicker-config="{
+                minView: 'hour'
+            }" data-on-set-time="setDeadline(newDate, oldDate, editedTask)"></datetimepicker>
+        </div>
+    </div>
+
+    <flash-message></flash-message>
+
+    <comment-wrapper task="editedTask"></comment-wrapper>
+</div>

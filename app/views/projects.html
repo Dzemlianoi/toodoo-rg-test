@@ -1,0 +1,13 @@
+<div ng-controller="projectsCtrl">
+    <project-wrapper ng-repeat="project in projects" delete="deleteProject" project="project"></project-wrapper>
+    <div ng-controller="signinCtrl">
+        <button class="todo-add todo-butts" ng-click="addProject()">
+            <i class="fa fa-plus view"></i>
+            <span> Add new task list </span>
+        </button>
+        <button ui-sref="signin" ng-click="signOut()" class="todo-add todo-butts">
+            <i class="fa fa-power-off view"></i>
+            <span> Logout </span>
+        </button>
+    </div>
+</div>
