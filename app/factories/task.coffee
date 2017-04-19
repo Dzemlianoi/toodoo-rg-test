@@ -1,7 +1,7 @@
 app = angular.module('todo');
 
 app.factory 'Task', ['$resource', ($resource) ->
-  $resource 'http://toodoo-rg.herokuapp.com/tasks/:id.json', { id: '@id' },
+  $resource 'https://toodoo-rg.herokuapp.com/tasks/:id.json', { id: '@id' },
     index:
       method: 'GET'
       responseType: 'json'
@@ -12,13 +12,13 @@ app.factory 'Task', ['$resource', ($resource) ->
       method: 'PUT'
     orderUp:
       method: 'PATCH',
-      url: 'http://toodoo-rg.herokuapp.com/tasks/:task_id/order_up',
+      url: 'https://toodoo-rg.herokuapp.com/tasks/:task_id/order_up',
       responseType: 'json',
       params:
         task_id: '@task_id'
     orderDown:
       method: 'PATCH',
-      url: 'http://toodoo-rg.herokuapp.com/tasks/:task_id/order_down',
+      url: 'https://toodoo-rg.herokuapp.com/tasks/:task_id/order_down',
       responseType: 'json',
       params:
         task_id: '@task_id'
