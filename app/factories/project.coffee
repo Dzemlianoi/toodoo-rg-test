@@ -1,7 +1,7 @@
 app = angular.module('todo')
 
 app.factory 'Project', ['$resource', ($resource) ->
-  $resource 'http://localhost:3000/projects/:id.json', { id: '@id' },
+  $resource 'https://toodoo-rg.herokuapp.com/projects/:id.json', { id: '@id' },
     index:
       method: 'GET'
       isArray: true

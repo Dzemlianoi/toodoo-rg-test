@@ -1,7 +1,7 @@
 app = angular.module('todo');
 
 app.factory 'Comment', ['$resource', ($resource) ->
-  $resource 'http://localhost:3000/comments/:id.json', { id: '@id' },
+  $resource 'https://toodoo-rg.herokuapp.com/comments/:id.json', { id: '@id' },
     index:
       method: 'GET'
       isArray: true

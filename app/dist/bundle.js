@@ -83428,7 +83428,7 @@ app = angular.module('todo');
 app.config([
   '$authProvider', function($authProvider) {
     return $authProvider.configure({
-      apiUrl: 'http://localhost:3000',
+      apiUrl: 'http://toodoo-rg.herokuapp.com',
       authProviderPaths: {
         facebook: '/auth/facebook'
       }
@@ -83892,7 +83892,7 @@ app = angular.module('todo');
 
 app.factory('Comment', [
   '$resource', function($resource) {
-    return $resource('http://localhost:3000/comments/:id.json', {
+    return $resource('http://toodoo-rg.herokuapp.com/comments/:id.json', {
       id: '@id'
     }, {
       index: {
@@ -83932,7 +83932,7 @@ app = angular.module('todo');
 
 app.factory('Project', [
   '$resource', function($resource) {
-    return $resource('http://localhost:3000/projects/:id.json', {
+    return $resource('http://toodoo-rg.herokuapp.com/projects/:id.json', {
       id: '@id'
     }, {
       index: {
@@ -83958,7 +83958,7 @@ app = angular.module('todo');
 
 app.factory('Task', [
   '$resource', function($resource) {
-    return $resource('http://localhost:3000/tasks/:id.json', {
+    return $resource('http://toodoo-rg.herokuapp.com/tasks/:id.json', {
       id: '@id'
     }, {
       index: {

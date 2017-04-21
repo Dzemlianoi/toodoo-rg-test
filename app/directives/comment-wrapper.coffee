@@ -7,7 +7,7 @@ app.directive 'commentWrapper', () ->
     $scope.comments = Comment.index(task_id: $scope.task.id)
     $scope.addComment = () ->
       added_comment = Upload.upload(
-        url: 'http://toodoo-rg.herokuapp.com/comments/'
+        url: 'https://toodoo-rg.herokuapp.com/comments/'
         data: $scope.getData()
       )
       added_comment.then(
