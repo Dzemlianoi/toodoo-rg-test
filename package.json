@@ -27,8 +27,8 @@
     "webpack": "^2.4.1"
   },
   "scripts": {
-    "bundle": "webpack",
     "heroku-postbuild": "./node_modules/bower/bin/bower install",
+    "bundle": "webpack",
     "start": "node server.js"
   }
 }

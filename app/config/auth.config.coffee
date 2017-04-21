@@ -2,5 +2,7 @@ app = angular.module('todo')
 
 app.config ['$authProvider', ($authProvider) ->
   $authProvider.configure
-    apiUrl: 'https://toodoo-rg.herokuapp.com'
+    apiUrl: 'http://localhost:3000'
+    authProviderPaths:
+      facebook: '/auth/facebook'
 ]

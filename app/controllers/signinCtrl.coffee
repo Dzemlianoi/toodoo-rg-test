@@ -6,6 +6,7 @@ app.controller 'signinCtrl', [ '$scope', '$auth', '$state', 'Flash', ($scope, $a
     $state.go 'home'
 
   $scope.$on 'auth:login-error', (ev, reason) ->
+    return if (reason.errors[0] is 'Invalid login credentials. Please try again.')
     Flash.create 'danger', reason.errors[0]  if reason and reason.errors
 
   $scope.$on 'auth:logout-success', ->

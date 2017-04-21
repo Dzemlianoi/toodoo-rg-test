@@ -29,4 +29,3 @@ app.directive 'projectWrapper', () ->
     $scope.renameProjectByEnter = (project, keyEvent) ->
        $scope.renameProject(project) if keyEvent.which is 13
   ]
-#    "heroku-postbuild": "./node_modules/bower/bin/bower install"
