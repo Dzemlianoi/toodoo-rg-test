@@ -83644,7 +83644,7 @@ app.directive('commentWrapper', function() {
         $scope.addComment = function() {
           var added_comment;
           added_comment = Upload.upload({
-            url: 'https://toodoo-rg.herokuapp.com/comments/',
+            url: 'http://toodoo-rg.herokuapp.com/comments/',
             data: $scope.getData()
           });
           return added_comment.then(function(response) {
@@ -83892,7 +83892,7 @@ app = angular.module('todo');
 
 app.factory('Comment', [
   '$resource', function($resource) {
-    return $resource('https://toodoo-rg.herokuapp.com/comments/:id.json', {
+    return $resource('http://toodoo-rg.herokuapp.com/comments/:id.json', {
       id: '@id'
     }, {
       index: {
@@ -83932,7 +83932,7 @@ app = angular.module('todo');
 
 app.factory('Project', [
   '$resource', function($resource) {
-    return $resource('https://toodoo-rg.herokuapp.com/projects/:id.json', {
+    return $resource('http://toodoo-rg.herokuapp.com/projects/:id.json', {
       id: '@id'
     }, {
       index: {
@@ -83958,7 +83958,7 @@ app = angular.module('todo');
 
 app.factory('Task', [
   '$resource', function($resource) {
-    return $resource('https://toodoo-rg.herokuapp.com/tasks/:id.json', {
+    return $resource('http://toodoo-rg.herokuapp.com/tasks/:id.json', {
       id: '@id'
     }, {
       index: {
@@ -83974,7 +83974,7 @@ app.factory('Task', [
       },
       orderUp: {
         method: 'PATCH',
-        url: 'https://toodoo-rg.herokuapp.com/tasks/:task_id/order_up',
+        url: 'http://toodoo-rg.herokuapp.com/tasks/:task_id/order_up',
         responseType: 'json',
         params: {
           task_id: '@task_id'
@@ -83982,7 +83982,7 @@ app.factory('Task', [
       },
       orderDown: {
         method: 'PATCH',
-        url: 'https://toodoo-rg.herokuapp.com/tasks/:task_id/order_down',
+        url: 'http://toodoo-rg.herokuapp.com/tasks/:task_id/order_down',
         responseType: 'json',
         params: {
           task_id: '@task_id'
