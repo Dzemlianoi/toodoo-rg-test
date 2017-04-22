@@ -83428,7 +83428,7 @@ app = angular.module('todo');
 app.config([
   '$authProvider', function($authProvider) {
     return $authProvider.configure({
-      apiUrl: 'https://toodoo-rg.herokuapp.com',
+      apiUrl: 'http://toodoo-rg.herokuapp.com',
       authProviderPaths: {
         facebook: '/auth/facebook'
       }
