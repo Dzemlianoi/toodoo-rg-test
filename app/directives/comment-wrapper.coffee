@@ -5,11 +5,11 @@ app.directive 'commentWrapper', () ->
   templateUrl: 'views/directives/comment-wrapper.html'
   controller: [ '$scope', 'Comment', 'Flash', 'Upload', ($scope, Comment, Flash, Upload) ->
     $scope.comments = Comment.index(task_id: $scope.task.id)
+
     $scope.addComment = () ->
-      added_comment = Upload.upload(
+      added_comment = Upload.upload
         url: 'http://toodoo-rg.herokuapp.com/comments/'
         data: $scope.getData()
-      )
       added_comment.then(
         (response) ->
           $scope.comments.push response.data
