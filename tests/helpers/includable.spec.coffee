@@ -1,9 +1,9 @@
 beforeEach(module('todo'))
 
-beforeEach inject (_$httpBackend_, _$compile_, $rootScope, $controller, $location, $injector, $timeout) ->
+beforeEach inject (_$httpBackend_, $compile, $rootScope, $controller, $location, $injector, $timeout) ->
   @scope = $rootScope.$new()
   @http = _$httpBackend_
-  @compile = _$compile_
+  @compile = $compile
   @location = $location
   @controller = $controller
   @injector = $injector
