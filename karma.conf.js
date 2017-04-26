@@ -4,6 +4,7 @@ module.exports = function (config) {
     frameworks: ['jasmine'],
     files: [
       './bower_components/angular/angular.js',
+      './node_modules/angular-mocks/angular-mocks.js',
       './bower_components/jquery/dist/jquery.js',
       './bower_components/angular-resource/angular-resource.js',
       './bower_components/angular-ui-router/release/angular-ui-router.js',
@@ -19,7 +20,7 @@ module.exports = function (config) {
       './app/controllers/*.coffee',
       './app/directives/*.coffee',
       './app/factories/*.coffee',
-      './tests/testCtrl.spec.js'
+      './tests/**/*.coffee'
     ],
     exclude: [
       './app/config/index.config.coffee',
@@ -28,7 +29,7 @@ module.exports = function (config) {
       './app/factories/indexFactory.coffee'
     ],
     preprocessors: {
-      './app/**/*.coffee': ['coffee']
+      './**/*.coffee': ['coffee']
     },
     reporters: ['progress'],
     port: 9876,
