@@ -5,6 +5,5 @@ todo = angular.module('todo', [
   'ngResource',
   'ngFlash',
   'ngDialog',
-  'ngFileUpload',
-  'ui.bootstrap.datetimepicker'
+  'ngFileUpload'
 ])
